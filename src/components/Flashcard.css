@@ -1,0 +1,62 @@
+.flashcard {
+  width: 100%;
+  height: 395px;
+  perspective: 1000px;
+  border-radius: 20px;
+}
+
+.flashcard:focus {
+  /* outline: none; */
+  /* box-shadow: 0 0 10px 2px rgba(199, 246, 218, 0.744);  */
+}
+
+.flashcard > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.4s linear;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.front {
+  background: #151320;
+  color: #f8f8f2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.back {
+  background: #151320;
+  color: #8aff80;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  max-height: 100%;
+
+  .icons {
+    display: flex;
+    gap: 8px;
+    margin: 0 auto;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+.flipped > .front {
+  transform: rotateY(180deg);
+}
+
+.flipped > .back {
+  transform: rotateY(360deg);
+}
+
+.copy-label,
+.listen {
+  font-size: 0.6rem;
+}
